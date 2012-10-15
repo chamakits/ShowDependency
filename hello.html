@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <script src="closure-library/closure/goog/base.js"></script>
+    <script type="text/javascript" src="draculajs/raphael-min.js"></script>
+    <script type="text/javascript" src="draculajs/dracula_graffle.js"></script>
+    <script type="text/javascript" src="draculajs/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="draculajs/dracula_graph.js"></script>
+    <script src="hello.js"></script>
+    <script src="draculaexample.js"></script>
+  </head>
+  <style>
+    textarea.sometext
+    {
+    width:30em;
+    height:20em;
+    }
+  </style>
+  <!--<body onload="sayHi()"> -->
+  <body>
+    <textarea id="sometext" name="sometext" class="sometext" autocomplete="on"></textarea>
+    <button type="button" onclick="buildTree();" >Woot!</button>
+    <div id="canvas"></div>
+    <button id="redraw" onclick="redraw();">redraw</button>
+  </body>
+</html>
