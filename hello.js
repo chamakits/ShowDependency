@@ -10,7 +10,10 @@ var textDividedOrig=[];
 var nodeArray = [];
 var currKey=0;
 var allTreeNodes={};
+//allTreeNodesList.forEach(function(curr){console.log(curr.value_)})
+var allTreeNodesList=[];
 var allParentNodes = {};
+var allParentNodesList = [];
 
 function sayHi() {
   var newHeader = goog.dom.createDom('h1', {'style': 'background-color:#EEE'},
@@ -20,6 +23,7 @@ function sayHi() {
 
 function buildTree(){
     allTreeNodes={};
+    allTreeNodesList=[];
     var textArea = document.getElementById('sometext');
     textDividedOrig = textArea.value.split('\n');
 
@@ -121,6 +125,7 @@ function setNodeFromPair(currPair)
         currKeyStr=currPair.curr.replace(currLabel,'');
         currNode = new goog.structs.TreeNode(currKey++,currKeyStr);
         allTreeNodes[currKeyStr] = currNode;
+        allTreeNodesList.push(currNode);
     }
 
     if(currNodeParent == undefined)
@@ -128,6 +133,7 @@ function setNodeFromPair(currPair)
         currKeyStr=currPair.parent.replace(parentLabel,'');
         currNodeParent = new goog.structs.TreeNode(currKey++,currKeyStr);
         allTreeNodes[currKeyStr] = currNodeParent;
+        allTreeNodesList.push(currNodeParent);
         
     }
 
@@ -142,6 +148,7 @@ function setNodeFromPair(currPair)
     if(currNodeParent == undefined)
     {
         allParentNodes[currKeyStr]=currNodeParent;
+        allParentNodesList.Push(currNodeParent);
     }
 
     
@@ -149,7 +156,19 @@ function setNodeFromPair(currPair)
 
 function setRoot(treeNodes)
 {
+    var currNode;
+    var nextNode;
+    var containsIt;
     
+    for(var counter= 0; counter < treeNodes.length; ++counter)
+    {
+        currNode = treeNodes[counter];
+        for(var counter2 = counter; counter2<treeNodes.length; ++counter2)
+        {
+            nextNode = treeNodes[counter2];
+            //TODO CONTINUE HERE!
+        }
+    }
 }
 
 function drawTreeNodes(treeNodes)
